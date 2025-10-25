@@ -15,7 +15,7 @@ const SegmentModal = ({ setShowModal }: any) => {
 
   const saveSegment = () => {
     setShowModal(false);
-    console.log(formData, "formdata");
+    console.log(formData, "formData");
   };
 
   return (
