@@ -52,13 +52,13 @@ const SchemaSegments = ({ formData, setFormData }: any) => {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex gap-4 justify-end">
-        <div>
-          <p></p>
-          <p>UserTraits</p>
+        <div className="flex items-center gap-2">
+          <p className="w-[10px] h-[10px] rounded-full bg-[green] mt-[1px]"></p>
+          <p>- UserTraits</p>
         </div>
-        <div>
-          <p></p>
-          <p>GroupTraits</p>
+        <div className="flex items-center gap-2 mt-[1px]">
+          <p className="w-[10px] h-[10px] rounded-full bg-[red]"></p>
+          <p>- GroupTraits</p>
         </div>
       </div>
       <div className="flex flex-col gap-2">
@@ -79,7 +79,7 @@ const SchemaSegments = ({ formData, setFormData }: any) => {
             <p className="p-2 text-gray-400">No Schemas added yet</p>
           )}
         </div>
-        <div>
+        <div className="px-2">
           <SchemaField
           selectedSchema={selectedSchema}
            options={options}

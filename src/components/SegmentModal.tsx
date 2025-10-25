@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SchemaSegments from "./SchemaSegments";
+import axios from "axios";
 
 const SegmentModal = ({ setShowModal }: any) => {
   const initData = {
@@ -13,9 +14,17 @@ const SegmentModal = ({ setShowModal }: any) => {
     setFormData({ ...formData, [name]: e.target.value });
   };
 
-  const saveSegment = () => {
-    setShowModal(false);
-    console.log(formData, "formData");
+  const saveSegment = async () => {
+    try {
+      setShowModal(false);
+      console.log(formData, "formData");
+      const res = await axios.post(
+        `https://webhook.site/1d6ddf33-52f7-45da-915d-e70a5065d5cd`,
+        formData);
+        console.log(formData,"res")
+    } catch (err: any) {
+      alert(err);
+    }
   };
 
   return (
