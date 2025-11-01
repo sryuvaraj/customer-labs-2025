@@ -9,6 +9,7 @@ const SegmentModal = ({ setShowModal }: any) => {
   };
 
   const [formData, setFormData] = useState<any>(initData);
+  const [formDat, setFormDat] = useState<any>(initData);
 
   const handleChange = (e: any, name: string) => {
     setFormData({ ...formData, [name]: e.target.value });
