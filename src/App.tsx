@@ -8,19 +8,6 @@ import { useState } from 'react'
 
 function App() {
 
-  const protectedRoutes = ["about","careers","contacts"]
-  const [isProtected, setIsProtected] = useState(false)
-
-  const route = useParams()
-  console.log(route)
-  const user = true
-  if(user){
-    setIsProtected(true)
-  }
-  else{
-    const isExist = protectedRoutes.find((i:any) => i === route)
-  }
-
   return (
     <div className='h-100vh'>
     {/* <ViewAudience /> */}
