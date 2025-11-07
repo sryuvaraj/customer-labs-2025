@@ -9,7 +9,7 @@ const NavBar = () => {
   return (
     <div className='flex gap-4 items-center'>
        <Link to={"/"}>Home</Link>
-       {/* <Link to={"/about"}>About</Link> */}
+       <Link to={"/about"}>About</Link>
        <Link to={"/careers"}>Careers</Link>
        <Link to={"/contacts"}>Contacts</Link>
     </div>
