@@ -21,10 +21,11 @@ const ToDoList = () => {
     }
   };
   const handleAdd = () => {
+     if(formData.task.trim() !== ""){
     const data = { ...formData, id: list.length + 1 };
     setList([...list, data]);
     setFormData({ task: "" });
-  };
+  };}
   const handleDelete = (id: any) => {
     console.log("id", id);
     const updatedList = list.filter((item: any) => item.id != id);
@@ -57,6 +58,7 @@ const ToDoList = () => {
         {isEditing ? (<button onClick={handleUpdate}>Update</button>) : (<button onClick={handleAdd}>Add</button>)}
       </div>
       <div>
+        <p className="border-b border-red-600 w-fit px-2">To Do Tasks List</p>
         {list?.length > 0 &&
           list?.map((item: any, index: any) => (
             <div key={index}>
