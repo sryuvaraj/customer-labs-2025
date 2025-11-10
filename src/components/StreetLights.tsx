@@ -2,18 +2,24 @@ import React, { useState, useEffect } from "react";
 
 const StreetLights = () => {
   const [value, setValue] = useState<number>(1);
-
   useEffect(() => {
-    // Run the light cycle continuously
     const interval = setInterval(() => {
-      setValue(1); // Red
-      setTimeout(() => setValue(2), 3000); // Yellow after 3s
-      setTimeout(() => setValue(3), 4000); // Green after 4s
-    }, 7000); // Full cycle = 7 seconds
-
-    // Cleanup old intervals when component re-renders/unmounts
+      setValue(value ==1 ? 2 : value == 2 ? 3 : 1);
+    }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [value]); 
+
+  const red = () => {
+    setValue(1);
+  }
+
+  const yellow = () => {
+    setValue(2);
+  } 
+
+  const green = () => {
+    setValue(3);
+  }
 
   return (
     <div className="flex flex-col justify-center items-center gap-3 mt-10">
@@ -32,6 +38,11 @@ const StreetLights = () => {
           value === 3 ? "bg-green-500" : "bg-gray-700"
         }`}
       ></div>
+      <div>
+        <p onClick={red}>red</p>
+        <p onClick={yellow}>yellow</p>
+        <p onClick={green}>green</p>
+      </div>
     </div>
   );
 };
